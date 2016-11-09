@@ -29,14 +29,14 @@ public class Extractor {
      * Returns the list of choices with their associated scores of similarity in a list
      * of {@link ExtractedResult}
      *
-     * @param query The query string
+     * @param query   The query string
      * @param choices The list of choices
-     * @param func The function to apply
+     * @param func    The function to apply
      * @return The list of results
      */
     public List<ExtractedResult> extractWithoutOrder(String query, Collection<String> choices, Applicable func) {
 
-        List<ExtractedResult> yields = new ArrayList<>();
+        List<ExtractedResult> yields = new ArrayList<ExtractedResult>();
 
         for (String s : choices) {
 

@@ -7,7 +7,7 @@ final class SetUtils {
 
     static <T> Set<T> intersection (Set<T> s1, Set<T> s2){
 
-        Set<T> intersection = new HashSet<>(s1);
+        Set<T> intersection = new HashSet<T>(s1);
         intersection.retainAll(s2);
 
         return intersection;
@@ -16,7 +16,7 @@ final class SetUtils {
 
     static <T> Set<T> difference (Set<T> s1, Set<T> s2) {
 
-        Set<T> difference = new HashSet<>(s1);
+        Set<T> difference = new HashSet<T>(s1);
         difference.removeAll(s2);
 
         return difference;

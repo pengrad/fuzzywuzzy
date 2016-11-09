@@ -27,7 +27,7 @@ public class TokenSet extends RatioAlgorithm {
         String sorted1to2 = (sortedInter + " " + Utils.sortAndJoin(diff1to2, " ")).trim();
         String sorted2to1 = (sortedInter + " " + Utils.sortAndJoin(diff2to1, " ")).trim();
 
-        List<Integer> results = new ArrayList<>();
+        List<Integer> results = new ArrayList<Integer>();
 
         results.add(ratio.apply(sortedInter, sorted1to2));
         results.add(ratio.apply(sortedInter, sorted2to1));

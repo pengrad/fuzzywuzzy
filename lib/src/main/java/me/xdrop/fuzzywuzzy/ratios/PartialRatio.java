@@ -26,7 +26,7 @@ public class PartialRatio implements Ratio {
         String shorter;
         String longer;
 
-        if (s1.length() < s2.length()){
+        if (s1.length() < s2.length()) {
 
             shorter = s1;
             longer = s2;
@@ -40,7 +40,7 @@ public class PartialRatio implements Ratio {
 
         MatchingBlock[] matchingBlocks = DiffUtils.getMatchingBlocks(shorter, longer);
 
-        List<Double> scores = new ArrayList<>();
+        List<Double> scores = new ArrayList<Double>();
 
         for (MatchingBlock mb : matchingBlocks) {
 
@@ -49,7 +49,7 @@ public class PartialRatio implements Ratio {
             int long_start = dist > 0 ? dist : 0;
             int long_end = long_start + shorter.length();
 
-            if(long_end > longer.length()) long_end = longer.length();
+            if (long_end > longer.length()) long_end = longer.length();
 
             String long_substr = longer.substring(long_start, long_end);
 

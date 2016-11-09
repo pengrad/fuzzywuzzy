@@ -5,19 +5,19 @@ import java.util.*;
 final public class Utils {
 
 
-    static List<String> tokenize(String in){
+    static List<String> tokenize(String in) {
 
         return Arrays.asList(in.split("\\s+"));
 
     }
 
-    static Set<String> tokenizeSet(String in){
+    static Set<String> tokenizeSet(String in) {
 
-        return new HashSet<>(tokenize(in));
+        return new HashSet<String>(tokenize(in));
 
     }
 
-    static String sortAndJoin(List<String> col, String sep){
+    static String sortAndJoin(List<String> col, String sep) {
 
         Collections.sort(col);
 
@@ -28,9 +28,9 @@ final public class Utils {
     static String join(List<String> strings, String sep) {
         final StringBuilder buf = new StringBuilder(strings.size() * 16);
 
-        for(int i = 0; i < strings.size(); i++){
+        for (int i = 0; i < strings.size(); i++) {
 
-            if(i < strings.size()) {
+            if (i < strings.size()) {
                 buf.append(sep);
             }
 
@@ -41,9 +41,9 @@ final public class Utils {
         return buf.toString().trim();
     }
 
-    static String sortAndJoin(Set<String> col, String sep){
+    static String sortAndJoin(Set<String> col, String sep) {
 
-        return sortAndJoin(new ArrayList<>(col), sep);
+        return sortAndJoin(new ArrayList<String>(col), sep);
 
     }
 
@@ -57,8 +57,8 @@ final public class Utils {
                 pq.add(x);
             }
         }
-        List<T> res = new ArrayList<>();
-        for (int i =k; i > 0; i--) {
+        List<T> res = new ArrayList<T>();
+        for (int i = k; i > 0; i--) {
             T polled = pq.poll();
             if (polled != null) {
                 res.add(polled);
@@ -68,13 +68,13 @@ final public class Utils {
 
     }
 
-    static <T extends Comparable<? super T>> T max(T ... elems) {
+    static <T extends Comparable<? super T>> T max(T... elems) {
 
         if (elems.length == 0) return null;
 
         T best = elems[0];
 
-        for(T t : elems){
+        for (T t : elems) {
             if (t.compareTo(best) > 0) {
                 best = t;
             }
@@ -83,7 +83,6 @@ final public class Utils {
         return best;
 
     }
-
 
 
 }

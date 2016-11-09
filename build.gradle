@@ -1,0 +1,26 @@
+allprojects {
+    apply plugin: 'maven'
+
+    group = 'me.xdrop'
+    version = '1.1.5'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+
+    sourceCompatibility = JavaVersion.VERSION_1_6
+    targetCompatibility = JavaVersion.VERSION_1_6
+
+    repositories {
+        mavenLocal()
+
+        maven { url "http://repo.maven.apache.org/maven2" }
+    }
+
+    dependencies {
+        testCompile 'org.codehaus.groovy:groovy-all:2.4.7'
+        testCompile 'junit:junit:4.12'
+        testCompile 'org.easymock:easymock:3.4'
+    }
+}
